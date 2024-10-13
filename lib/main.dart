@@ -1,33 +1,15 @@
+import 'package:first_app/gradient_container.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: Scaffold(
-      body: GradientContainer(),
+      body: GradientContainer(
+        colors: [
+          Color.fromARGB(255, 109, 73, 71),
+          Color.fromARGB(255, 184, 49, 207)
+        ],
+      ),
     ),
   ));
-}
-
-class GradientContainer extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color.fromARGB(255, 72, 9, 247), Colors.purpleAccent],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: const Center(
-        child: Text(
-          'Hello World!',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 28,
-          ),
-        ),
-      ),
-    );
-  }
 }
